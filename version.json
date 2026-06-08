@@ -1,13 +1,22 @@
 {
   "project": "KEP - Kankor Exam Preparation",
-  "version": "6.0",
-  "codename": "Deployment Ready Package",
+  "version": "6.0.3",
+  "codename": "Final Visual Polish",
   "created_at": "2026-06-08T12:31:55Z",
-  "status": "release_candidate",
+  "status": "release_candidate_visual_fixed",
   "notes": [
     "Static frontend package",
     "Supabase-ready database/login flow",
     "Student, admin, developer, and public areas separated",
     "Deployment and production safety guides included"
+  ],
+  "updated_at": "2026-06-08T22:46:39+00:00",
+  "brand_assets": [
+    "assets/kep-logo-official.png",
+    "assets/logo-header.png",
+    "assets/favicon.png",
+    "assets/icon-192.png",
+    "assets/icon-512.png",
+    "assets/apple-touch-icon.png"
   ]
 }

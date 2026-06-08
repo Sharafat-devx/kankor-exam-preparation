@@ -33,3 +33,28 @@
   const toggle=document.querySelector('.mobile-toggle');
   if(toggle&&nav&&!toggle.dataset.kepNavReady){toggle.dataset.kepNavReady='true';toggle.addEventListener('click',()=>nav.classList.toggle('open'));}
 })();
+
+
+/* KEP v6.0.1 — robust nav toggle fix */
+(function(){
+  function initMobileNav(){
+    const btn=document.querySelector('.mobile-toggle');
+    const navLinks=document.querySelector('.nav-links');
+    if(!btn||!navLinks||btn.dataset.v601Ready)return;
+    btn.dataset.v601Ready='true';
+    btn.addEventListener('click',function(){
+      document.body.classList.toggle('nav-open');
+      navLinks.classList.toggle('open');
+      btn.setAttribute('aria-expanded',document.body.classList.contains('nav-open')?'true':'false');
+    });
+    navLinks.addEventListener('click',function(e){
+      if(e.target.closest('a')){
+        document.body.classList.remove('nav-open');
+        navLinks.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+  document.addEventListener('DOMContentLoaded',initMobileNav);
+  setTimeout(initMobileNav,400);
+})();

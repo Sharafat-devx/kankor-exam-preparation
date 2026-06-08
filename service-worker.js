@@ -1,7 +1,7 @@
-const CACHE_NAME = 'kep-v6.0';
-const ASSETS = [
+const CACHE_NAME='kep-v6.0.3';
+const ASSETS=[
   "./",
-  ".gitignore",
+  "FILE_MANIFEST_v6.0.json",
   "KEP_v2_6_Submission_System_Guide.md",
   "KEP_v2_7_Google_Forms_Sheets_Setup_Guide.md",
   "KEP_v2_9_Content_Review_Dashboard_Guide.md",
@@ -51,8 +51,13 @@ const ASSETS = [
   "KEP_v5_8_Student_Progress_Analytics_Guide.md",
   "KEP_v5_9_Check_Report.md",
   "KEP_v5_9_Public_Launch_Polish_Guide.md",
+  "KEP_v6_0_1_Check_Report.md",
+  "KEP_v6_0_1_UI_Polish_Fix_Report.md",
+  "KEP_v6_0_2_Check_Report.md",
+  "KEP_v6_0_2_Official_Logo_Update_Report.md",
+  "KEP_v6_0_3_Final_Visual_Polish_Report.md",
+  "KEP_v6_0_Check_Report.md",
   "README.md",
-  "_headers",
   "about.html",
   "admin-db.html",
   "admin-home.html",
@@ -69,8 +74,15 @@ const ASSETS = [
   "app-v4-migration.js",
   "app-v4.js",
   "app.js",
+  "assets/apple-touch-icon.png",
+  "assets/favicon.png",
   "assets/hero-pattern.svg",
+  "assets/icon-192.png",
+  "assets/icon-512.png",
+  "assets/kep-logo-official-display.jpg",
+  "assets/kep-logo-official.png",
   "assets/kep-logo.svg",
+  "assets/logo-header.png",
   "assets/logo.svg",
   "auth.html",
   "contact.html",
@@ -85,6 +97,7 @@ const ASSETS = [
   "docs/KEP_v6_0_Deployment_Guide.md",
   "docs/KEP_v6_0_Release_Notes.md",
   "docs/KEP_v6_0_Security_Checklist.md",
+  "docs/nav-layout-before-v6.0.3.js.txt",
   "form-links.json",
   "girls-education.html",
   "girls-pathway.html",
@@ -138,7 +151,6 @@ const ASSETS = [
   "subjects.html",
   "submit-content.html",
   "supabase/config.toml",
-  "supabase/functions/.env.example",
   "supabase/functions/kep-ai-review/README.md",
   "supabase/functions/kep-ai-review/index.ts",
   "supabase-config.js",
@@ -152,17 +164,6 @@ const ASSETS = [
   "version.json",
   "volunteer.html"
 ];
-
-self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(
-    keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
-  )));
-});
-
-self.addEventListener('fetch', event => {
-  event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request)));
-});
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS)))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))))});
+self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(c=>c||fetch(e.request)))});

@@ -1,4 +1,4 @@
-# KEP v6.0 — Kankor Exam Preparation
+# KEP v6.0.3 — Kankor Exam Preparation
 
 This is the modern starter website for KEP, rebuilt from the original Kankor Exam Preparation FYP idea into a web-first education platform.
 
@@ -11,6 +11,35 @@ This is the modern starter website for KEP, rebuilt from the original Kankor Exa
 
 
 
+
+## v6.0.3 updates — Final Visual Polish
+
+- Improved public header layout from live screenshot feedback.
+- Reduced duplicate Login appearance.
+- Hid distracting public area badge in header.
+- Improved official logo size and spacing.
+- Added stronger overflow protection.
+- Improved hero section rhythm and spacing.
+- Added `KEP_v6_0_3_Final_Visual_Polish_Report.md`.
+
+## v6.0.2 updates — Official Logo Brand Update
+
+- Added official KEP logo: `assets/kep-logo-official.png`.
+- Added header-ready logo: `assets/logo-header.png`.
+- Added favicon and app icons.
+- Updated all HTML pages to use the new header logo.
+- Updated manifest icons.
+- Added official logo showcase section to Home and About pages.
+
+## v6.0.1 updates — UI Polish Fix
+
+- Fixed crowded desktop header/navigation.
+- Improved logo sizing.
+- Improved active navigation pills.
+- Improved tablet/mobile menu behavior.
+- Reduced oversized hero titles.
+- Added better spacing below sticky header.
+- Updated old version labels on key pages.
 
 ## v6.0 updates — Deployment Ready Package
 
