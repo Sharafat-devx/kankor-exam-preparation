@@ -1,4 +1,4 @@
-const CACHE_NAME='kep-v6.0.3';
+const CACHE_NAME='kep-v6.0.4';
 const ASSETS=[
   "./",
   "FILE_MANIFEST_v6.0.json",
@@ -55,7 +55,10 @@ const ASSETS=[
   "KEP_v6_0_1_UI_Polish_Fix_Report.md",
   "KEP_v6_0_2_Check_Report.md",
   "KEP_v6_0_2_Official_Logo_Update_Report.md",
+  "KEP_v6_0_3_Check_Report.md",
   "KEP_v6_0_3_Final_Visual_Polish_Report.md",
+  "KEP_v6_0_4_Check_Report.md",
+  "KEP_v6_0_4_Role_Navigation_Guide.md",
   "KEP_v6_0_Check_Report.md",
   "README.md",
   "about.html",

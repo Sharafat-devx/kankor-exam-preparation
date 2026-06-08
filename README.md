@@ -1,4 +1,4 @@
-# KEP v6.0.3 — Kankor Exam Preparation
+# KEP v6.0.4 — Kankor Exam Preparation
 
 This is the modern starter website for KEP, rebuilt from the original Kankor Exam Preparation FYP idea into a web-first education platform.
 
@@ -11,6 +11,15 @@ This is the modern starter website for KEP, rebuilt from the original Kankor Exa
 
 
 
+
+## v6.0.4 updates — Role Navigation and Internal Polish
+
+- Rebuilt navigation into four clean areas: Public, Student, Admin, Developer.
+- Removed confusing mixed navigation between student/admin/developer areas.
+- Added protected area notice on admin/developer pages.
+- Updated old version labels on mock/database/launch/admin pages.
+- Improved internal page hero sizes and spacing.
+- Added `KEP_v6_0_4_Role_Navigation_Guide.md`.
 
 ## v6.0.3 updates — Final Visual Polish
 

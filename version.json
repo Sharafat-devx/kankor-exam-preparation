@@ -1,16 +1,16 @@
 {
   "project": "KEP - Kankor Exam Preparation",
-  "version": "6.0.3",
-  "codename": "Final Visual Polish",
+  "version": "6.0.4",
+  "codename": "Role Navigation and Internal Polish",
   "created_at": "2026-06-08T12:31:55Z",
-  "status": "release_candidate_visual_fixed",
+  "status": "release_candidate_role_nav_fixed",
   "notes": [
     "Static frontend package",
     "Supabase-ready database/login flow",
     "Student, admin, developer, and public areas separated",
     "Deployment and production safety guides included"
   ],
-  "updated_at": "2026-06-08T22:46:39+00:00",
+  "updated_at": "2026-06-08T23:11:32+00:00",
   "brand_assets": [
     "assets/kep-logo-official.png",
     "assets/logo-header.png",

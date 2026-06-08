@@ -58,3 +58,170 @@
   document.addEventListener('DOMContentLoaded',initMobileNav);
   setTimeout(initMobileNav,400);
 })();
+
+
+/* KEP v6.0.4 — final role-based clean navigation override
+   This runs after older nav scripts and rebuilds the header so students do not see
+   developer/admin navigation mixed into their learning area. */
+(function(){
+  const PUBLIC_PAGES = new Set([
+    'index.html','kankor-info.html','girls-education.html','subjects.html','library.html',
+    'about.html','contact.html','privacy.html','terms.html','public-launch-checklist.html','auth.html'
+  ]);
+
+  const STUDENT_PAGES = new Set([
+    'student-home.html','student-db.html','practice-db.html','mock-db.html','progress-analytics.html',
+    'study-plan-db.html','library-db.html','student-experience.html','dashboard.html','practice.html'
+  ]);
+
+  const ADMIN_PAGES = new Set([
+    'admin-home.html','admin-db.html','admin-review-db.html','review-dashboard.html','content-quality-db.html',
+    'ai-review-assistant.html','ai-suggestions-db.html','ai-edge-setup.html'
+  ]);
+
+  const DEV_PAGES = new Set([
+    'developer-setup.html','database-setup.html','supabase-setup.html','migrate-to-db.html',
+    'system-review.html','deployment-checklist.html','deploy-guide.html','production-checklist.html',
+    'launch-mode.html','release-notes.html','google-forms.html','submit-content.html'
+  ]);
+
+  function pageName(){
+    const name = location.pathname.split('/').pop();
+    return name || 'index.html';
+  }
+
+  function areaFor(page){
+    if(STUDENT_PAGES.has(page)) return 'student';
+    if(ADMIN_PAGES.has(page)) return 'admin';
+    if(DEV_PAGES.has(page)) return 'developer';
+    return 'public';
+  }
+
+  function link(label, href, current){
+    return `<a href="${href}"${href === current ? ' class="active"' : ''}>${label}</a>`;
+  }
+
+  function linksFor(area, current){
+    if(area === 'student'){
+      return [
+        ['Student Home','student-home.html'],
+        ['Practice','practice-db.html'],
+        ['Mock Exam','mock-db.html'],
+        ['Progress','progress-analytics.html'],
+        ['Study Plan','study-plan-db.html'],
+        ['Library','library-db.html'],
+        ['Profile','student-db.html']
+      ].map(x => link(x[0], x[1], current)).join('');
+    }
+
+    if(area === 'admin'){
+      return [
+        ['Admin Home','admin-home.html'],
+        ['Content Quality','content-quality-db.html'],
+        ['Review Content','admin-review-db.html'],
+        ['AI Assistant','ai-review-assistant.html'],
+        ['Saved AI','ai-suggestions-db.html']
+      ].map(x => link(x[0], x[1], current)).join('');
+    }
+
+    if(area === 'developer'){
+      return [
+        ['Setup Hub','developer-setup.html'],
+        ['Database','database-setup.html'],
+        ['Supabase','supabase-setup.html'],
+        ['Deploy','deploy-guide.html'],
+        ['Checklist','production-checklist.html']
+      ].map(x => link(x[0], x[1], current)).join('');
+    }
+
+    return [
+      ['Home','index.html'],
+      ['Kankor Info','kankor-info.html'],
+      ['Girls Education','girls-education.html'],
+      ['Subjects','subjects.html'],
+      ['Library','library.html'],
+      ['About','about.html'],
+      ['Contact','contact.html']
+    ].map(x => link(x[0], x[1], current)).join('');
+  }
+
+  function actionsFor(area){
+    if(area === 'student'){
+      return `
+        <a class="btn btn-primary" href="mock-db.html">Take Mock</a>
+        <a class="btn btn-secondary" href="study-plan-db.html">Study Plan</a>
+      `;
+    }
+
+    if(area === 'admin'){
+      return `
+        <a class="btn btn-primary" href="admin-review-db.html">Review Queue</a>
+        <a class="btn btn-secondary" href="content-quality-db.html">Quality</a>
+      `;
+    }
+
+    if(area === 'developer'){
+      return `
+        <a class="btn btn-primary" href="deploy-guide.html">Deploy</a>
+        <a class="btn btn-secondary" href="admin-home.html">Admin</a>
+      `;
+    }
+
+    return `
+      <a class="btn btn-primary" href="student-home.html">Start Learning</a>
+      <a class="btn btn-secondary" href="auth.html">Login</a>
+    `;
+  }
+
+  function buildHeader(){
+    const header = document.querySelector('.header');
+    if(!header || header.dataset.v604Clean === 'true') return;
+
+    const current = pageName();
+    const area = areaFor(current);
+    header.dataset.v604Clean = 'true';
+    document.body.dataset.kepArea = area;
+
+    header.innerHTML = `
+      <div class="container nav v604-nav">
+        <a class="logo" href="index.html" aria-label="KEP home">
+          <img src="assets/logo-header.png" alt="KEP logo">
+        </a>
+        <nav class="nav-links" aria-label="${area} navigation">
+          ${linksFor(area, current)}
+        </nav>
+        <div class="nav-actions">
+          ${actionsFor(area)}
+        </div>
+        <button class="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    `;
+
+    initMobileNav();
+  }
+
+  function initMobileNav(){
+    const btn = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if(!btn || !navLinks) return;
+
+    btn.addEventListener('click', function(){
+      const open = !document.body.classList.contains('nav-open');
+      document.body.classList.toggle('nav-open', open);
+      navLinks.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    navLinks.addEventListener('click', function(e){
+      if(e.target.closest('a')){
+        document.body.classList.remove('nav-open');
+        navLinks.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', buildHeader);
+  setTimeout(buildHeader, 50);
+  setTimeout(buildHeader, 400);
+})();

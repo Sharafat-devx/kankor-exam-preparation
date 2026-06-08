@@ -1240,3 +1240,157 @@ main > .hero:first-child{
   .logo{max-width:160px}
   .logo img{max-width:155px}
 }
+
+
+/* KEP v6.0.4 — Final role separation and internal page polish */
+
+/* The new v6.0.4 header replaces older mixed role headers */
+.v604-nav{
+  width:min(100%, 1500px);
+  margin-inline:auto;
+  grid-template-columns:minmax(190px,260px) minmax(0,1fr) auto auto;
+}
+
+/* Remove old secondary student/setup strips that caused confusion */
+.student-topbar,
+.student-mode-strip,
+.setup-mode-strip,
+.mode-strip,
+.role-strip,
+.subnav-strip,
+[data-student-shell],
+[data-mode-strip],
+.kep-mode-strip{
+  display:none!important;
+}
+
+/* If a page contains a second row with "student mode/back to student home", hide common structural sections */
+body[data-kep-area="student"] main > section:first-child:has(.eyebrow),
+body[data-kep-area="developer"] main > section:first-child:has(.eyebrow){
+  /* only modern browsers; harmless if unsupported */
+}
+
+/* Clear, calmer internal page hero */
+body[data-kep-area="student"] .compact-hero h1,
+body[data-kep-area="developer"] .compact-hero h1,
+body[data-kep-area="admin"] .compact-hero h1,
+body[data-kep-area="student"] .hero h1,
+body[data-kep-area="developer"] .hero h1,
+body[data-kep-area="admin"] .hero h1{
+  font-size:clamp(42px,4.8vw,70px);
+  line-height:1.03;
+  letter-spacing:-.055em;
+}
+
+body[data-kep-area="student"] .hero,
+body[data-kep-area="developer"] .hero,
+body[data-kep-area="admin"] .hero,
+body[data-kep-area="student"] .compact-hero,
+body[data-kep-area="developer"] .compact-hero,
+body[data-kep-area="admin"] .compact-hero{
+  padding-top:clamp(54px,6vw,86px);
+  padding-bottom:clamp(54px,6vw,86px);
+}
+
+/* Add comfortable side padding on very wide internal hero pages */
+body[data-kep-area="student"] .hero .container,
+body[data-kep-area="developer"] .hero .container,
+body[data-kep-area="admin"] .hero .container{
+  padding-left:clamp(22px,4vw,72px);
+  padding-right:clamp(22px,4vw,72px);
+}
+
+/* Internal pages should not start text at absolute screen edge */
+body[data-kep-area="student"] .hero-grid,
+body[data-kep-area="developer"] .hero-grid,
+body[data-kep-area="admin"] .hero-grid{
+  gap:clamp(30px,5vw,90px);
+}
+
+/* Navigation is now area-specific; make it feel calmer */
+.v604-nav .nav-links{
+  gap:12px;
+}
+
+.v604-nav .nav-links a{
+  border-radius:999px;
+  min-height:44px;
+  padding:10px 15px;
+}
+
+.v604-nav .nav-actions .btn{
+  min-height:52px;
+}
+
+/* Safety notice for admin/developer */
+.role-safety-strip{
+  border-bottom:1px solid var(--line);
+  background:#FFF7ED;
+  color:#7C2D12;
+}
+
+.role-safety-inner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:11px 16px;
+  text-align:center;
+  font-weight:850;
+}
+
+.role-safety-inner b{
+  color:#9A3412;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:12px;
+}
+
+.role-safety-inner span{
+  font-size:14px;
+  line-height:1.45;
+}
+
+/* On public launch/checklist pages, make the huge title less overwhelming */
+.public-launch-hero h1,
+.setup-hero h1,
+.admin-hero h1,
+.student-home-hero h1{
+  max-width:820px;
+}
+
+/* Prevent clipped logo/badges forever */
+.nav > *:not(.logo):not(.nav-links):not(.nav-actions):not(.mobile-toggle){
+  display:none!important;
+}
+
+/* Mobile: role notice can wrap nicely */
+@media(max-width:1120px){
+  .v604-nav{
+    display:flex;
+  }
+  .v604-nav .nav-links{
+    gap:6px;
+  }
+}
+
+@media(max-width:760px){
+  body[data-kep-area="student"] .compact-hero h1,
+  body[data-kep-area="developer"] .compact-hero h1,
+  body[data-kep-area="admin"] .compact-hero h1,
+  body[data-kep-area="student"] .hero h1,
+  body[data-kep-area="developer"] .hero h1,
+  body[data-kep-area="admin"] .hero h1{
+    font-size:clamp(34px,10.5vw,52px);
+  }
+  .role-safety-inner{
+    display:grid;
+    gap:4px;
+    text-align:left;
+  }
+}
+
+/* Keep public homepage still bold and beautiful */
+body[data-kep-area="public"] .hero h1{
+  font-size:clamp(46px,5.6vw,86px);
+}
