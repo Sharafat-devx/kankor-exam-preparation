@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+<title>Feedback Dashboard — KEP Admin</title><meta name="description" content="Admin dashboard for KEP tester feedback."></head><body>
+<header class="header"></header><main>
+<section class="role-safety-strip"><div class="container role-safety-inner"><b>Protected area</b><span>Admin/reviewer feedback review page. Real access is controlled by Supabase RLS.</span></div></section>
+<section class="hero compact-hero admin-hero"><div class="hero-bg"></div><div class="container hero-grid"><div><span class="eyebrow">KEP v6.2 • Admin Feedback</span><h1>Review tester feedback and question reports.</h1><p class="lead">See what testers found, mark issues reviewed, and track fixed reports.</p></div><div class="hero-card"><h2 id="feedbackCount">0 report(s)</h2><p>New feedback will appear after testers submit the feedback form.</p><button class="btn btn-primary" onclick="location.reload()">Refresh</button></div></div></section>
+<section class="section"><div class="container"><div class="table-wrap card"><table class="data-table"><thead><tr><th>Status</th><th>Type</th><th>Subject / ID</th><th>Message</th><th>Created</th><th>Action</th></tr></thead><tbody id="feedbackRows"><tr><td colspan="6">Loading feedback...</td></tr></tbody></table></div></div></section>
+</main>  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="nav-layout.js"></script>
+  <script src="app-v4.js"></script>
+  <script src="feedback.js"></script></body></html>
