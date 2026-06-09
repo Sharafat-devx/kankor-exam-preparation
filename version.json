@@ -1,16 +1,16 @@
 {
   "project": "KEP - Kankor Exam Preparation",
-  "version": "6.0.6",
-  "codename": "Progress Loader Fix",
+  "version": "6.1",
+  "codename": "Content Launch Pack",
   "created_at": "2026-06-08T12:31:55Z",
-  "status": "release_candidate_progress_loader_fixed",
+  "status": "content_launch_candidate",
   "notes": [
     "Static frontend package",
     "Supabase-ready database/login flow",
     "Student, admin, developer, and public areas separated",
     "Deployment and production safety guides included"
   ],
-  "updated_at": "2026-06-08T23:46:30+00:00",
+  "updated_at": "2026-06-08T23:53:11+00:00",
   "brand_assets": [
     "assets/kep-logo-official.png",
     "assets/logo-header.png",

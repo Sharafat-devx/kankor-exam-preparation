@@ -1,4 +1,4 @@
-const CACHE_NAME='kep-v6.0.6';
+const CACHE_NAME='kep-v6.1';
 const ASSETS=[
   "./",
   "FILE_MANIFEST_v6.0.json",
@@ -61,8 +61,10 @@ const ASSETS=[
   "KEP_v6_0_4_Role_Navigation_Guide.md",
   "KEP_v6_0_5_Check_Report.md",
   "KEP_v6_0_5_Progress_Analytics_Fix_Report.md",
+  "KEP_v6_0_6_Check_Report.md",
   "KEP_v6_0_6_Progress_Loader_Fix_Report.md",
   "KEP_v6_0_Check_Report.md",
+  "KEP_v6_1_Content_Launch_Pack_Guide.md",
   "README.md",
   "about.html",
   "admin-db.html",
@@ -92,6 +94,7 @@ const ASSETS=[
   "assets/logo.svg",
   "auth.html",
   "contact.html",
+  "content-launch-pack.html",
   "content-quality-db.html",
   "content-quality-db.js",
   "content-submission-schema.json",
@@ -103,6 +106,7 @@ const ASSETS=[
   "docs/KEP_v6_0_Deployment_Guide.md",
   "docs/KEP_v6_0_Release_Notes.md",
   "docs/KEP_v6_0_Security_Checklist.md",
+  "docs/KEP_v6_1_Content_Review_Checklist.md",
   "docs/nav-layout-before-v6.0.3.js.txt",
   "form-links.json",
   "girls-education.html",
@@ -145,6 +149,7 @@ const ASSETS=[
   "scripts/KEP_v5_1_1_Demo_Content_Boost.sql",
   "scripts/KEP_v5_1_Sample_Content.sql",
   "scripts/KEP_v5_4_AI_Review_Suggestions_Table.sql",
+  "scripts/KEP_v6_1_Content_Launch_Pack.sql",
   "service-worker.js",
   "sitemap.xml",
   "student-db.html",

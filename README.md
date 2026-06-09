@@ -1,4 +1,4 @@
-# KEP v6.0.6 — Kankor Exam Preparation
+# KEP v6.1 — Kankor Exam Preparation
 
 This is the modern starter website for KEP, rebuilt from the original Kankor Exam Preparation FYP idea into a web-first education platform.
 
@@ -11,6 +11,16 @@ This is the modern starter website for KEP, rebuilt from the original Kankor Exa
 
 
 
+
+## v6.1 updates — Content Launch Pack
+
+- Added `content-launch-pack.html`.
+- Added `scripts/KEP_v6_1_Content_Launch_Pack.sql`.
+- Added starter subjects, questions, resources, and mock template SQL.
+- Added `KEP_v6_1_Content_Launch_Pack_Guide.md`.
+- Added `/docs/KEP_v6_1_Content_Review_Checklist.md`.
+- Updated Developer Setup with Content Launch Pack.
+- No frontend logic change required.
 
 ## v6.0.6 updates — Progress Loader Fix
 

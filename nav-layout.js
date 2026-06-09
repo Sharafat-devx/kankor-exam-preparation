@@ -82,7 +82,7 @@
   const DEV_PAGES = new Set([
     'developer-setup.html','database-setup.html','supabase-setup.html','migrate-to-db.html',
     'system-review.html','deployment-checklist.html','deploy-guide.html','production-checklist.html',
-    'launch-mode.html','release-notes.html','google-forms.html','submit-content.html'
+    'launch-mode.html','release-notes.html','content-launch-pack.html','google-forms.html','submit-content.html'
   ]);
 
   function pageName(){
@@ -129,6 +129,7 @@
         ['Setup Hub','developer-setup.html'],
         ['Database','database-setup.html'],
         ['Supabase','supabase-setup.html'],
+        ['Content Pack','content-launch-pack.html'],
         ['Deploy','deploy-guide.html'],
         ['Checklist','production-checklist.html']
       ].map(x => link(x[0], x[1], current)).join('');

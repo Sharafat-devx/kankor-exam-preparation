@@ -1394,3 +1394,13 @@ body[data-kep-area="admin"] .hero-grid{
 body[data-kep-area="public"] .hero h1{
   font-size:clamp(46px,5.6vw,86px);
 }
+
+
+/* KEP v6.1 — Content Launch Pack */
+body[data-kep-area="developer"] .content-pack-card,
+.content-launch-card{
+  border:1px solid var(--line);
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 16px 42px rgba(15,48,91,.07);
+}
