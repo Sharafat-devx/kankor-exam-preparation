@@ -1,4 +1,4 @@
-# KEP v6.1 — Content Launch Pack Guide
+# KEP v6.1.1 — Content Launch Pack Guide
 
 ## Purpose
 
@@ -32,7 +32,7 @@ Before wider public launch:
 2. Go to SQL Editor.
 3. Open this file:
 
-`scripts/KEP_v6_1_Content_Launch_Pack.sql`
+`scripts/KEP_v6_1_1_Content_Launch_Pack_FIXED.sql`
 
 4. Copy and run it.
 5. Open the live KEP website.
@@ -75,3 +75,22 @@ KEP v6.2 should focus on:
 - feedback form
 - report-a-question flow
 - tester instructions
+
+
+## v6.1.1 fix
+
+The first v6.1 SQL used newer column names such as:
+
+- `subjects.status`
+- `questions.option_a`
+- `resources.url`
+- `exam_templates.total_questions`
+
+Your actual KEP database uses:
+
+- `subjects.name, slug, language, description`
+- `questions.options` as JSONB
+- `resources.file_url`
+- `exam_templates.time_minutes` and `distribution`
+
+So v6.1.1 fixes the SQL to match your current database.

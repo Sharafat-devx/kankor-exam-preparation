@@ -1,4 +1,4 @@
-# KEP v6.1 — Kankor Exam Preparation
+# KEP v6.3 — Kankor Exam Preparation
 
 This is the modern starter website for KEP, rebuilt from the original Kankor Exam Preparation FYP idea into a web-first education platform.
 
@@ -11,6 +11,36 @@ This is the modern starter website for KEP, rebuilt from the original Kankor Exa
 
 
 
+
+## v6.3 updates — Simplify & Launch Mode
+
+- Added `start.html`.
+- Simplified public navigation.
+- Simplified student navigation.
+- Simplified admin navigation.
+- Added homepage student journey section.
+- Added `KEP_v6_3_Simplify_Launch_Mode_Guide.md`.
+- Added `/docs/KEP_v6_3_Simple_First_Test_Plan.md`.
+- No SQL required.
+- No new complex features added.
+
+## v6.2 updates — Tester Feedback Pack
+
+- Added tester instructions, feedback page, question report page, and admin feedback dashboard.
+- Added `feedback.js`.
+- Added `scripts/KEP_v6_2_Tester_Feedback_Table.sql`.
+- Feedback requires login and saves to Supabase.
+- Admin can review and mark feedback as reviewed/fixed.
+
+## v6.1.1 updates — Content SQL Schema Fix
+
+- Fixed v6.1 SQL error: `subjects.status` column does not exist.
+- Updated content SQL to match current KEP schema.
+- Questions now use `options` JSONB.
+- Resources now use `file_url` and `source_details`.
+- Exam template now uses `time_minutes` and `distribution`.
+- Added `scripts/KEP_v6_1_1_Content_Launch_Pack_FIXED.sql`.
+- Added `KEP_v6_1_1_SQL_Fix_Report.md`.
 
 ## v6.1 updates — Content Launch Pack
 

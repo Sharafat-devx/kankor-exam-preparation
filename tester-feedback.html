@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+<title>Tester Feedback — KEP v6.2</title><meta name="description" content="Submit feedback to help improve KEP before wider launch."></head><body>
+<header class="header"></header><main>
+<section class="hero compact-hero"><div class="hero-bg"></div><div class="container hero-grid"><div><span class="eyebrow">KEP v6.2 • Tester Feedback</span><h1>Help us improve KEP before wider launch.</h1><p class="lead">Share problems, ideas, confusing parts, or anything that can make KEP better for students.</p></div><div class="hero-card"><h2>Testing rule</h2><p>Please write clearly. Mention the page, subject, and what happened.</p><div class="security-note">Feedback is for controlled testers first.</div></div></div></section>
+<section class="section"><div class="container narrow"><form id="feedbackForm" class="card form-card"><h2>Submit feedback</h2>
+<label>Type<select name="report_type"><option value="general_feedback">General feedback</option><option value="bug">Bug / error</option><option value="content_issue">Content issue</option><option value="design_issue">Design issue</option><option value="idea">Idea / improvement</option></select></label>
+<label>Priority<select name="priority"><option value="normal">Normal</option><option value="important">Important</option><option value="urgent">Urgent</option></select></label>
+<label>Page URL<input name="page_url" type="text" placeholder="Page where you found the issue"></label>
+<label>Your message<textarea name="message" rows="7" placeholder="Explain what happened, what confused you, or what should improve." required></textarea></label>
+<label>Screenshot note<textarea name="screenshot_note" rows="3" placeholder="Optional: device/browser/screenshot notes."></textarea></label>
+<button class="btn btn-primary" type="submit">Submit Feedback</button><div id="feedbackStatus" class="status-box">Login first, then submit feedback.</div>
+</form></div></section></main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="nav-layout.js"></script>
+  <script src="app-v4.js"></script>
+  <script src="feedback.js"></script>
+</body></html>

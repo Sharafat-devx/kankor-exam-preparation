@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+<title>Report a Question — KEP v6.2</title><meta name="description" content="Report wrong or unclear questions in KEP."></head><body>
+<header class="header"></header><main>
+<section class="hero compact-hero"><div class="hero-bg"></div><div class="container hero-grid"><div><span class="eyebrow">KEP v6.2 • Report Content</span><h1>Report a wrong or confusing question.</h1><p class="lead">If an answer, explanation, subject, or wording looks wrong, send it here for review.</p></div><div class="hero-card"><h2>Content safety</h2><p>Every report helps protect students from wrong learning material.</p><div class="security-note">Reports are reviewed by admin/reviewer before changes.</div></div></div></section>
+<section class="section"><div class="container narrow"><form id="feedbackForm" class="card form-card"><h2>Question report</h2><input type="hidden" name="report_type" value="question_report">
+<label>Priority<select name="priority"><option value="normal">Normal</option><option value="important">Important</option><option value="urgent">Urgent</option></select></label>
+<label>Subject<input name="subject_name" type="text" placeholder="Example: Mathematics"></label>
+<label>Question ID / number<input name="question_id" type="text" placeholder="Optional if visible"></label>
+<label>Question text<textarea name="question_text" rows="4" placeholder="Paste or write the question here."></textarea></label>
+<label>What is wrong?<textarea name="message" rows="7" placeholder="Correct answer seems wrong, explanation unclear, duplicate question, translation issue..." required></textarea></label>
+<label>Page URL<input name="page_url" type="text" placeholder="Page where you found the question"></label>
+<button class="btn btn-primary" type="submit">Submit Question Report</button><div id="feedbackStatus" class="status-box">Login first, then submit the report.</div>
+</form></div></section></main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="nav-layout.js"></script>
+  <script src="app-v4.js"></script>
+  <script src="feedback.js"></script>
+</body></html>
